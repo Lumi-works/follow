@@ -1,2 +1,2 @@
 # follow
-This is a React learning repository
+This is a repository that stores the React study samples
