@@ -11,7 +11,7 @@ const starContainerStyle = {
   display: "flex",
 };
 
-StartRating.propTypes = {
+StarRating.propTypes = {
   maxRating: PropTypes.number,
   defaultRating: PropTypes.number,
   size: PropTypes.number,
@@ -21,7 +21,7 @@ StartRating.propTypes = {
   onSetRating: PropTypes.func,
 };
 
-export default function StartRating({
+export default function StarRating({
   maxRating = 5,
   color = "#fcc419",
   size = 48,
@@ -49,7 +49,7 @@ export default function StartRating({
     <div style={containerStyle} className={className}>
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
-          <Start
+          <Star
             key={i}
             full={tmpRating ? tmpRating >= i + 1 : rating >= i + 1}
             onRate={() => handleRating(i + 1)}
@@ -71,7 +71,7 @@ export default function StartRating({
   );
 }
 
-function Start({ onRate, full, onHoverIn, onHoverOut, color, size }) {
+function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
   const startStyle = {
     width: `${size}px`,
     height: `${size}px`,
